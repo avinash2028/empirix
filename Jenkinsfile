@@ -1,9 +1,15 @@
 pipeline{
     agent any
     stages {
+    stage('pull the code'){
+       steps{
+         git 'https://github.com/pdurbin/maven-hello-world.git' 
+       
+          }         
+    }
         stage('build') {
             steps {
-                sh 'echo "creating build"'
+                sh  'cd my-app; mvn package'
             }
         }
         stage('Unit Test') {
