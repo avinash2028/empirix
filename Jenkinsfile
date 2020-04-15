@@ -29,7 +29,7 @@ pipeline{
        }
        stage('Deploying') {
            steps {
-               sh 'ssh -tt root@10.1.0.120 "cd /tmp && ./deploy_script.py" $dir'
+               sh 'ssh -tt root@10.1.0.120 "cd /tmp && ./deploy_script.sh" $dir'
            }
        }
     }
