@@ -9,12 +9,12 @@ pipeline{
       }
       stage('build') {
         steps {
-          sh  'echo "build"'
+          sh  'cd my-app; mvn package"'
         }
       }
       stage('Unit Test') {
         steps {
-          sh 'cd my-app; mvn package'
+          sh 'Testing'
         }
       }
       stage('Copy file to remote server') {
